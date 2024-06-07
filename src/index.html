@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odin To Do List</title>
-</head>
-<body>
-    <div id="sidebar">
-        <ul>
-            <li><img src="../sources/star.png" class="icon"></img>Today</li>
-            <li><img src="../sources/calendar.png" class="icon"></img>Upcoming</li>
-            <li><img src="../sources/stack.png" class="icon"></img>Anytime</li>
-            <li><img src="../sources/box.png" class="icon"></img>Someday</li>
-            <li><img src="../sources/book.png" class="icon"></img>Logbook</li>
-            <li id="new-project-btn"><img src="../sources/add.png" class="icon"></img>New Project</li>
-        </ul>   
-        <div id="projects-list"></div>       
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin Weather</title>
+  </head>
+  <body>
+    <img src="/sources/background.jpg" alt="" id="background-img" />
+    <div id="main">
+      <div id="input-area">
+        <label for="location">Enter your location:</label>
+        <input type="text" name="" id="location" />
+        <button id="search-btn">Search</button>
+      </div>
     </div>
-    <div id="project-area">
-        <h1>No Projects Yet!</h1>
-        <p>No notes Yet!</p>
-        <p>Create a new Project then you'll be able to add a task to it!</p>
-        <button id="create-project-btn" style="width: 20%;">Create Project</button>
-    </div>
-</body>
+  </body>
 </html>
