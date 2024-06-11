@@ -32,9 +32,15 @@ function renderUI(data) {
     data.location.region +
     ", " +
     data.location.name;
+
   let weather = document.createElement("h2");
   weather.textContent = data.current.condition.text;
-  //icon
+
+  let icon = document.createElement("img");
+  icon.setAttribute("src", "//cdn.weatherapi.com/weather/64x64/day/116.png");
+  icon.style.width = "100px";
+  icon.style.height = "auto";
+
   let date = new Date();
   let day = date.getDate();
   let month = date.getMonth() + 1;
@@ -42,16 +48,26 @@ function renderUI(data) {
   let fullDate = document.createElement("h2");
   fullDate.innerHTML = day + ", " + month + ", " + year;
 
-  //let hour = document.createElement("h2");
   let temperature = document.createElement("h1");
-  temperature.textContent = data.current.dewpoint_c
-  //let measurement = document.createElement("p");
+  temperature.textContent = data.current.dewpoint_c + " °C";
+
+  let measurement = document.createElement("p");
+  measurement.textContent = "Display °F";
+  measurement.addEventListener("click", () => {
+    if (temperature.textContent == data.current.dewpoint_c + " °C") {
+      measurement.textContent = "Display °C";
+      temperature.textContent = data.current.dewpoint_f + " °F";
+    } else {
+      measurement.textContent = "Display °F";
+      temperature.textContent = data.current.dewpoint_c + " °C";
+    }
+  });
 
   dataArea.appendChild(place);
   dataArea.appendChild(weather);
+  dataArea.appendChild(icon);
   dataArea.appendChild(fullDate);
-  //dataArea.appendChild(hour);
   dataArea.appendChild(temperature);
-  //dataArea.appendChild(measurement);
+  dataArea.appendChild(measurement);
   page.appendChild(dataArea);
 }
